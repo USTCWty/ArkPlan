@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.czbank.ark.dao.AnswerSubjectMapper">
+  <resultMap id="BaseResultMap" type="com.czbank.ark.model.AnswerSubject">
+    <result column="answer_id" jdbcType="VARCHAR" property="answerId" />
+    <result column="subject_id" jdbcType="VARCHAR" property="subjectId" />
+    <result column="answer_content" jdbcType="VARCHAR" property="answerContent" />
+  </resultMap>
+  <insert id="insert" parameterType="com.czbank.ark.model.AnswerSubject">
+    insert into answer_subject (answer_id, subject_id, answer_content
+      )
+    values (#{answerId,jdbcType=VARCHAR}, #{subjectId,jdbcType=VARCHAR}, #{answerContent,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.czbank.ark.model.AnswerSubject">
+    insert into answer_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        answer_id,
+      </if>
+      <if test="subjectId != null">
+        subject_id,
+      </if>
+      <if test="answerContent != null">
+        answer_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        #{answerId,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=VARCHAR},
+      </if>
+      <if test="answerContent != null">
+        #{answerContent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.czbank.ark.model.AnswerSubject">
+    <result column="answer_id" jdbcType="VARCHAR" property="answerId" />
+    <result column="subject_id" jdbcType="VARCHAR" property="subjectId" />
+    <result column="answer_content" jdbcType="VARCHAR" property="answerContent" />
+  </resultMap>
+  <insert id="insert" parameterType="com.czbank.ark.model.AnswerSubject">
+    insert into answer_subject (answer_id, subject_id, answer_content
+      )
+    values (#{answerId,jdbcType=VARCHAR}, #{subjectId,jdbcType=VARCHAR}, #{answerContent,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.czbank.ark.model.AnswerSubject">
+    insert into answer_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        answer_id,
+      </if>
+      <if test="subjectId != null">
+        subject_id,
+      </if>
+      <if test="answerContent != null">
+        answer_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        #{answerId,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=VARCHAR},
+      </if>
+      <if test="answerContent != null">
+        #{answerContent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.czbank.ark.model.AnswerSubject">
+    <result column="answer_id" jdbcType="VARCHAR" property="answerId" />
+    <result column="subject_id" jdbcType="VARCHAR" property="subjectId" />
+    <result column="answer_content" jdbcType="VARCHAR" property="answerContent" />
+  </resultMap>
+  <insert id="insert" parameterType="com.czbank.ark.model.AnswerSubject">
+    insert into answer_subject (answer_id, subject_id, answer_content
+      )
+    values (#{answerId,jdbcType=VARCHAR}, #{subjectId,jdbcType=VARCHAR}, #{answerContent,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.czbank.ark.model.AnswerSubject">
+    insert into answer_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        answer_id,
+      </if>
+      <if test="subjectId != null">
+        subject_id,
+      </if>
+      <if test="answerContent != null">
+        answer_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        #{answerId,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=VARCHAR},
+      </if>
+      <if test="answerContent != null">
+        #{answerContent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.czbank.ark.model.AnswerSubject">
+    <result column="answer_id" jdbcType="VARCHAR" property="answerId" />
+    <result column="subject_id" jdbcType="VARCHAR" property="subjectId" />
+    <result column="answer_content" jdbcType="VARCHAR" property="answerContent" />
+  </resultMap>
+  <insert id="insert" parameterType="com.czbank.ark.model.AnswerSubject">
+    insert into answer_subject (answer_id, subject_id, answer_content
+      )
+    values (#{answerId,jdbcType=VARCHAR}, #{subjectId,jdbcType=VARCHAR}, #{answerContent,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.czbank.ark.model.AnswerSubject">
+    insert into answer_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        answer_id,
+      </if>
+      <if test="subjectId != null">
+        subject_id,
+      </if>
+      <if test="answerContent != null">
+        answer_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        #{answerId,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=VARCHAR},
+      </if>
+      <if test="answerContent != null">
+        #{answerContent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.czbank.ark.model.AnswerSubject">
+    <result column="answer_id" jdbcType="VARCHAR" property="answerId" />
+    <result column="subject_id" jdbcType="VARCHAR" property="subjectId" />
+    <result column="answer_content" jdbcType="VARCHAR" property="answerContent" />
+  </resultMap>
+  <insert id="insert" parameterType="com.czbank.ark.model.AnswerSubject">
+    insert into answer_subject (answer_id, subject_id, answer_content
+      )
+    values (#{answerId,jdbcType=VARCHAR}, #{subjectId,jdbcType=VARCHAR}, #{answerContent,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.czbank.ark.model.AnswerSubject">
+    insert into answer_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        answer_id,
+      </if>
+      <if test="subjectId != null">
+        subject_id,
+      </if>
+      <if test="answerContent != null">
+        answer_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        #{answerId,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=VARCHAR},
+      </if>
+      <if test="answerContent != null">
+        #{answerContent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.czbank.ark.model.AnswerSubject">
+    <result column="answer_id" jdbcType="VARCHAR" property="answerId" />
+    <result column="subject_id" jdbcType="VARCHAR" property="subjectId" />
+    <result column="answer_content" jdbcType="VARCHAR" property="answerContent" />
+  </resultMap>
+  <insert id="insert" parameterType="com.czbank.ark.model.AnswerSubject">
+    insert into answer_subject (answer_id, subject_id, answer_content
+      )
+    values (#{answerId,jdbcType=VARCHAR}, #{subjectId,jdbcType=VARCHAR}, #{answerContent,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.czbank.ark.model.AnswerSubject">
+    insert into answer_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        answer_id,
+      </if>
+      <if test="subjectId != null">
+        subject_id,
+      </if>
+      <if test="answerContent != null">
+        answer_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="answerId != null">
+        #{answerId,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=VARCHAR},
+      </if>
+      <if test="answerContent != null">
+        #{answerContent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
