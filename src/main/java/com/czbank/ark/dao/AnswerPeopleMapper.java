@@ -1,5 +1,7 @@
 package com.czbank.ark.dao;
 
+import org.apache.ibatis.annotations.Select;
+
 import com.czbank.ark.model.AnswerPeople;
 
 public interface AnswerPeopleMapper {
@@ -14,4 +16,5 @@ public interface AnswerPeopleMapper {
     int updateByPrimaryKeySelective(AnswerPeople record);
 
     int updateByPrimaryKey(AnswerPeople record);
+
 }
