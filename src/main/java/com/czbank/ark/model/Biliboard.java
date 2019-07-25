@@ -1,7 +1,7 @@
 package com.czbank.ark.model;
 
 public class Biliboard {
-    private String biliboardId;
+    private int biliboardId;
 
     private String enrollDate;
 
@@ -15,12 +15,12 @@ public class Biliboard {
 
     private String submitDate;
 
-    public String getBiliboardId() {
+    public int getBiliboardId() {
         return biliboardId;
     }
 
-    public void setBiliboardId(String biliboardId) {
-        this.biliboardId = biliboardId == null ? null : biliboardId.trim();
+    public void setBiliboardId(int biliboardId) {
+        this.biliboardId = biliboardId ;
     }
 
     public String getEnrollDate() {

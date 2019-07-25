@@ -1,7 +1,7 @@
 package com.czbank.ark.model;
 
 public class AnswerPeople {
-    private String anwserId;
+    private Integer anwserId;
 
     private String answerName;
 
@@ -13,12 +13,12 @@ public class AnswerPeople {
 
     private String corresponding;
 
-    public String getAnwserId() {
+    public int getAnwserId() {
         return anwserId;
     }
 
-    public void setAnwserId(String anwserId) {
-        this.anwserId = anwserId == null ? null : anwserId.trim();
+    public void setAnwserId(int anwserId) {
+        this.anwserId = anwserId ;
     }
 
     public String getAnswerName() {
