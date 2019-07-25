@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 /**  
 * @Title: ScheduledTasks.java
-* @Package com.nine.Ark
+* @Package com.czbank.ark
 * @Description: 定时任务
 * @author wty
 * @date 2019年7月23日

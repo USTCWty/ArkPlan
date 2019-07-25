@@ -25,13 +25,13 @@ public class UserController {
 	
 	
 	@RequestMapping("/count")
-	public int conutUser(){
+	public int countUser(){
 		  return userService.countUser();
 	}
 
 	
 	@RequestMapping("/login")
-	public ArkResponse userLogin(HttpServletRequest request, @RequestBody Map<String, String> map){ 
+	public ArkResponse userLogin(@RequestBody Map<String, String> map){ 
 		 String name = map.get("username").toString();
 		 String password = map.get("password").toString();
 		 ArkResponse response =new ArkResponse();
@@ -50,16 +50,15 @@ public class UserController {
 	}
 	@RequestMapping("/addUser")    
 	
-	public void addUser(HttpServletRequest request){
-		 String name =request.getParameter("username");
-		 String password =request.getParameter("password");
-		 String userRole =request.getParameter("role");
+	public void addUser(@RequestBody Map<String, String> map){
+		 String name =map.get("username").toString();
+		 String password =map.get("password").toString();
+		 String userRole =map.get("userRole").toString();
 		 User user=new User();
 		 user.setUserName(name);
 		 user.setUserPassword(password);
 		 user.setUserRole(userRole);
-		 userService.addUser(user);
-				
+		 userService.addUser(user);				
 	}
 	@RequestMapping("/getUser")    
 	public void userFind(){       
