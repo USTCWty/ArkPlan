@@ -1,9 +1,11 @@
 package com.czbank.ark.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
-import org.json.HTTP;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,15 +21,15 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping("/count")    
-	public int conutUser(){       
+	@RequestMapping("/count")
+	public int conutUser(){
 		  return userService.countUser();
 	}
 	
-	@RequestMapping("/login")    
-	public String userLogin(HttpServletRequest request){  
-		 String name =request.getParameter("username");
-		 String password =request.getParameter("password");
+	@RequestMapping("/login")
+	public String userLogin(HttpServletRequest request, @RequestBody Map<String, String> map){ 
+		 String name = map.get("username").toString();
+		 String password = map.get("password").toString();
 		 boolean isUser =userService.isUser(name,password);
 		 if(isUser){
 			 return "登录成功";
