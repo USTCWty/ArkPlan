@@ -1,7 +1,7 @@
 package com.czbank.ark.model;
 
 public class Company {
-    private String companyId;
+    private int companyId;
 
     private String companyName;
 
@@ -13,12 +13,12 @@ public class Company {
 
     private String idname;
 
-    public String getCompanyId() {
+    public int getCompanyId() {
         return companyId;
     }
 
-    public void setCompanyId(String companyId) {
-        this.companyId = companyId == null ? null : companyId.trim();
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId ;
     }
 
     public String getCompanyName() {

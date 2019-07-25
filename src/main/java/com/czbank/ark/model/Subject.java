@@ -1,9 +1,19 @@
-package com.czbank.ark.model;
+ package com.czbank.ark.model;
 
 public class Subject {
-    private String subjectId;
+    private int subjectId;
+    
+    private String subjectName;
 
-    private String subjectContent;
+    public String getSubjectName() {
+		return subjectName;
+	}
+
+	public void setSubjectName(String subjectName) {
+		this.subjectName = subjectName;
+	}
+
+	private String subjectContent;
 
     private String scanNum;
 
@@ -19,12 +29,12 @@ public class Subject {
 
     private String endDate;
 
-    public String getSubjectId() {
+    public int getSubjectId() {
         return subjectId;
     }
 
-    public void setSubjectId(String subjectId) {
-        this.subjectId = subjectId == null ? null : subjectId.trim();
+    public void setSubjectId(int subjectId) {
+        this.subjectId = subjectId ;
     }
 
     public String getSubjectContent() {

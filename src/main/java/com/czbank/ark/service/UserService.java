@@ -6,4 +6,5 @@ public interface UserService {
 	public int countUser();
 	public boolean isUser(String name,String password);
 	public User getUserById();
+	public int addUser(User user);
 }
