@@ -1,9 +1,8 @@
 package com.czbank.ark.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -54,12 +53,18 @@ public class UserController {
 		 String name =map.get("username").toString();
 		 String password =map.get("password").toString();
 		 String userRole =map.get("userRole").toString();
+		 
+		 Date date = new Date();
+		 SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
+		 String time =dateFormat.format(date).toString();
 		 User user=new User();
 		 user.setUserName(name);
 		 user.setUserPassword(password);
 		 user.setUserRole(userRole);
+		 user.setSubmitTime(time);
 		 userService.addUser(user);				
 	}
+	
 	@RequestMapping("/getUser")    
 	public void userFind(){       
 		 userService.getUserById();

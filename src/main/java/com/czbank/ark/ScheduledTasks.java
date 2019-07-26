@@ -5,8 +5,12 @@ import java.util.Date;
 
 import org.apache.log4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.czbank.ark.service.UserService;
 
 /**  
 * @Title: ScheduledTasks.java
@@ -19,13 +23,16 @@ import org.springframework.stereotype.Component;
 
 
 @Component
+@RestController
 public class ScheduledTasks {
    
+	@Autowired UserService userService;
     private  static final SimpleDateFormat dataFromat = new SimpleDateFormat("HH:mm:ss");
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(ScheduledTasks.class);
-    @Scheduled(cron="0 0/10 * * * ?")
+    @Scheduled(cron="0 0/1 * * * ?")
     public void reportCurrent(){
-        logger.info("现在时间：{}",dataFromat.format(new Date()));
+    	int num =userService.countUser();
+        logger.debug("用户人数为"+num);
     }
  
 }

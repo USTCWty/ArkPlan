@@ -17,7 +17,7 @@ public class Subject {
 
     private String scanNum;
 
-    private String subjectCatogory;
+    private String subjectType;
 
     private String companyId;
 
@@ -53,12 +53,12 @@ public class Subject {
         this.scanNum = scanNum == null ? null : scanNum.trim();
     }
 
-    public String getSubjectCatogory() {
-        return subjectCatogory;
+    public String getSubjectType() {
+        return subjectType;
     }
 
-    public void setSubjectCatogory(String subjectCatogory) {
-        this.subjectCatogory = subjectCatogory == null ? null : subjectCatogory.trim();
+    public void setSubjectType(String subjectType) {
+        this.subjectType= subjectType == null ? null : subjectType.trim();
     }
 
     public String getCompanyId() {

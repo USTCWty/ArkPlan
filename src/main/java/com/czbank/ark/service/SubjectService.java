@@ -3,6 +3,7 @@ package com.czbank.ark.service;
 import java.util.*;
 
 import com.czbank.ark.model.Subject;
+import com.czbank.ark.model.SubjectType;
 
 public interface SubjectService {
 	List<Subject> getSubjectByType(String type); //根据类型获取题目
@@ -10,6 +11,8 @@ public interface SubjectService {
 	List<Subject> getAllSubject();//获取全部题目
 	int addSubject(Subject subject); //新增题目
 	int updateSubject(Subject subject); //更新题目
+	List<SubjectType> getSubjectType();// 获取题目类型
+	
 	
 	
 	

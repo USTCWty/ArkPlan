@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
 import com.czbank.ark.model.Subject;
+import com.czbank.ark.model.SubjectType;
 @Mapper
 @Repository
 public interface SubjectMapper {
@@ -27,4 +28,7 @@ public interface SubjectMapper {
     
     @Update("update subject set subject_content = #{subjectContent},scan_num = #{scanNum},subject_type = #{subjectType},company_id = #{companyId},answer_num=#{answerNum},answer_id=#{answerId},start_date=#{startDate},end_date=#{endDate} where id = #{id}") 
     int updateSubjectById(Subject subject);
+    
+    @Select("select * from subjectType")
+    List<SubjectType> selectSubjectType();
 }

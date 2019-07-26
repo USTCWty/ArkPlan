@@ -8,8 +8,18 @@ public class User {
     private String userRole;
 
     private String userPassword;
+    
+    private String submitTime;
 
-    public Integer getUserId() {
+    public String getSubmitTime() {
+		return submitTime;
+	}
+
+	public void setSubmitTime(String submitTime) {
+		this.submitTime = submitTime;
+	}
+
+	public Integer getUserId() {
         return userId;
     }
 

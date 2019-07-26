@@ -27,3 +27,6 @@ target/classes/com/czbank/ark/dao/BiliboardMapper.class
 target/classes/com/czbank/ark/dao/AnswerSubjectMapper.class
 target/classes/com/czbank/ark/dao/AnswerPeopleMapper.class
 /target/
+.classpath
+.project
+.README.md

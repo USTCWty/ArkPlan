@@ -14,7 +14,7 @@ import com.czbank.ark.model.User;
 @Repository
 public interface UserMapper {
 
-    @Insert("insert into user (user_name, user_Password,user_role) VALUES (#{userName}, #{userPassword}, #{userRole})")
+    @Insert("insert into user (user_name, user_Password,user_role,submit_time) VALUES (#{userName}, #{userPassword}, #{userRole},#{submitTime})")
     int addUser(User user);
     
     @Select("select count(*) from user ")
