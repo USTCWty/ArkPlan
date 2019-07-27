@@ -38,7 +38,7 @@ public class SubjectController {
 	@RequestMapping("/insertSubject")
 	public void addSubject(@RequestBody Map<String, String> map){
 		 String subjectName =map.get("subjectName").toString();
-		 String companyId =map.get("companyId").toString();
+		 int companyId= Integer.parseInt(map.get("companyId").toString());
 		 String subjectContent =map.get("subjectContent").toString();
 		 String subjectType=map.get("subjectType").toString();
 		 String startDate=map.get("startDate").toString();
@@ -53,22 +53,22 @@ public class SubjectController {
 		 subject.setStartDate(startDate);
 		 subject.setEndDate(endDate);
 		 subject.setSubjectType(subjectType);
-		 subject.setAnswerNum(answerNum);
-		 subject.setScanNum(scanNum);
+
 		 subjectService.addSubject(subject);
 	}
 	@RequestMapping("/updateSubject")
 	public void updateSubject(@RequestBody Map<String, String> map){
+		 int subjectId = Integer.parseInt(map.get("subjectId").toString());	 
 		 String subjectName =map.get("subjectName").toString();
-		 String companyId =map.get("companyId").toString();
+		 int companyId =Integer.parseInt(map.get("companyId").toString());
 		 String subjectContent =map.get("subjectContent").toString();
 		 String subjectType=map.get("subjectType").toString();
 		 String startDate=map.get("startDate").toString();
 		 String endDate=map.get("endDate").toString();
-		 String scanNum=map.get("scanNum").toString();
-		 String answerNum =map.get("answerNum").toString();
-		 String answerId=map.get("answerId").toString();
+		 int scanNum=Integer.parseInt(map.get("scanNum").toString());
+		 int answerNum =Integer.parseInt(map.get("answerNum").toString());
 		 Subject subject =new Subject();
+		 subject.setSubjectId(subjectId);
 		 subject.setCompanyId(companyId);
 		 subject.setSubjectName(subjectName);
 		 subject.setSubjectContent(subjectContent);

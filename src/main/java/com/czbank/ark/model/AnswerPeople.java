@@ -19,7 +19,7 @@ public class AnswerPeople {
 
     private String age;
 
-    private String score;
+    private int score;
 
     private String phoneNum;
     
@@ -65,12 +65,12 @@ public class AnswerPeople {
         this.age = age == null ? null : age.trim();
     }
 
-    public String getScore() {
+    public int getScore() {
         return score;
     }
 
-    public void setScore(String score) {
-        this.score = score == null ? null : score.trim();
+    public void setScore(int score) {
+        this.score = score;
     }
 
     public String getphoneNum() {

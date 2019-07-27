@@ -15,13 +15,13 @@ public class Subject {
 
 	private String subjectContent;
 
-    private String scanNum;
+    private int scanNum;
 
     private String subjectType;
 
-    private String companyId;
+    private int companyId;
 
-    private String answerNum;
+    private int answerNum;
 
     private String startDate;
 
@@ -43,12 +43,12 @@ public class Subject {
         this.subjectContent = subjectContent == null ? null : subjectContent.trim();
     }
 
-    public String getScanNum() {
+    public int getScanNum() {
         return scanNum;
     }
 
-    public void setScanNum(String scanNum) {
-        this.scanNum = scanNum == null ? null : scanNum.trim();
+    public void setScanNum(int scanNum) {
+        this.scanNum = scanNum;
     }
 
     public String getSubjectType() {
@@ -59,20 +59,20 @@ public class Subject {
         this.subjectType= subjectType == null ? null : subjectType.trim();
     }
 
-    public String getCompanyId() {
+    public int getCompanyId() {
         return companyId;
     }
 
-    public void setCompanyId(String companyId) {
-        this.companyId = companyId == null ? null : companyId.trim();
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId ;
     }
 
-    public String getAnswerNum() {
+    public int getAnswerNum() {
         return answerNum;
     }
 
-    public void setAnswerNum(String answerNum) {
-        this.answerNum = answerNum == null ? null : answerNum.trim();
+    public void setAnswerNum(int answerNum) {
+        this.answerNum = answerNum ;
     }
 
 

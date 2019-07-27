@@ -23,6 +23,6 @@ public interface BiliboardMapper {
 
     int updateByPrimaryKey(Biliboard record);
     
-    @Select("Select * from answer_people order by score limit #{top}" )
+    @Select("Select * from answer_people order by score desc limit #{top}" )
     List<AnswerPeople> selectAnswerPeopleRank(int top);
 }
