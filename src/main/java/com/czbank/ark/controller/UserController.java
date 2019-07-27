@@ -55,7 +55,7 @@ public class UserController {
 		 String userRole =map.get("userRole").toString();
 		 
 		 Date date = new Date();
-		 SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd :hh:mm:ss");
+		 SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		 String time =dateFormat.format(date).toString();
 		 User user=new User();
 		 user.setUserName(name);

@@ -4,9 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.swing.text.TabStop;
-
-import org.omg.CORBA.INTERNAL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,7 +53,6 @@ public class SubjectController {
 		 subject.setStartDate(startDate);
 		 subject.setEndDate(endDate);
 		 subject.setSubjectType(subjectType);
-		 subject.setAnswerId(answerId);
 		 subject.setAnswerNum(answerNum);
 		 subject.setScanNum(scanNum);
 		 subjectService.addSubject(subject);
@@ -79,7 +75,6 @@ public class SubjectController {
 		 subject.setStartDate(startDate);
 		 subject.setEndDate(endDate);
 		 subject.setSubjectType(subjectType);
-		 subject.setAnswerId(answerId);
 		 subject.setAnswerNum(answerNum);
 		 subject.setScanNum(scanNum);
 		 subjectService.updateSubject(subject);

@@ -23,15 +23,15 @@ public interface SubjectMapper {
     @Select("select * from subject")
     List<Subject> selectAllSubject();
     
-    @Insert("insert into subject (subject_content, scan_num, subject_type, company_id, answer_num, answer_id, start_date, end_date) VALUES (#{subjectContent}, #{scanNum}, #{subjectType}, #{companyId}, #{answerNum}, #{answerId}, #{startDate},#{endDate})")
+    @Insert("insert into subject (subject_content, scan_num, subject_type, company_id, answer_num,  start_date, end_date) VALUES (#{subjectContent}, #{scanNum}, #{subjectType}, #{companyId}, #{answerNum}, #{startDate},#{endDate})")
     int inserSubject(Subject subject);
     
-    @Update("update subject set subject_content = #{subjectContent},scan_num = #{scanNum},subject_type = #{subjectType},company_id = #{companyId},answer_num=#{answerNum},answer_id=#{answerId},start_date=#{startDate},end_date=#{endDate} where id = #{id}") 
+    @Update("update subject set subject_content = #{subjectContent},scan_num = #{scanNum},subject_type = #{subjectType},company_id = #{companyId},answer_num=#{answerNum},start_date=#{startDate},end_date=#{endDate} where id = #{id}") 
     int updateSubjectById(Subject subject);
     
     @Select("select * from subjectType")
     List<SubjectType> selectSubjectType();
     
-    @Select("select * from subject order by answer_num limit #{top}")
+    @Select("select subject_id,subject_name,subject_content,scan_num  from subject  order by answer_num limit #{top}")
     List<Subject> selectSubjectRank(int top);
 }

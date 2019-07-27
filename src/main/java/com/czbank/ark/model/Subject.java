@@ -23,8 +23,6 @@ public class Subject {
 
     private String answerNum;
 
-    private String answerId;
-
     private String startDate;
 
     private String endDate;
@@ -77,13 +75,6 @@ public class Subject {
         this.answerNum = answerNum == null ? null : answerNum.trim();
     }
 
-    public String getAnswerId() {
-        return answerId;
-    }
-
-    public void setAnswerId(String answerId) {
-        this.answerId = answerId == null ? null : answerId.trim();
-    }
 
     public String getStartDate() {
         return startDate;
