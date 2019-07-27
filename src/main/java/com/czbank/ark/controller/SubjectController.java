@@ -83,7 +83,7 @@ public class SubjectController {
 	@RequestMapping("/getSubjectRank")
 	public List<Subject>  getSubjectRank(HttpServletRequest request){
 		String topString =request.getParameter("top");
-		int top=1;
+		int top=10;
 	    if(topString!=null &&topString.length()>0){
 	    	top =Integer.parseInt(topString);
 	    }

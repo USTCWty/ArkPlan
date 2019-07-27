@@ -49,11 +49,10 @@ public class UserController {
 	}
 	@RequestMapping("/addUser")    
 	
-	public void addUser(@RequestBody Map<String, String> map){
+	public ArkResponse addUser(@RequestBody Map<String, String> map){
 		 String name =map.get("username").toString();
 		 String password =map.get("password").toString();
-		 String userRole =map.get("userRole").toString();
-		 
+		 String userRole =map.get("userRole").toString();		 
 		 Date date = new Date();
 		 SimpleDateFormat dateFormat= new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		 String time =dateFormat.format(date).toString();
@@ -62,7 +61,17 @@ public class UserController {
 		 user.setUserPassword(password);
 		 user.setUserRole(userRole);
 		 user.setSubmitTime(time);
-		 userService.addUser(user);				
+		 int num = userService.addUser(user);	
+		 ArkResponse response =new ArkResponse();
+		
+		 if(num==1){		
+			 response.setResponseCode(200);
+			 response.setResponseMsg("成功");
+		 }else{
+			 response.setResponseCode(201);
+			 response.setResponseMsg("注册用户失败");			
+		 }
+		 return response;
 	}
 	
 	@RequestMapping("/getUser")    

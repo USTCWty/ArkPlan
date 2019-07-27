@@ -11,9 +11,19 @@ public class AnswerPeople {
 
     private String score;
 
-    private String corresponding;
+    private String phoneNum;
+    
+    private int isStudent;
 
-    public int getAnwserId() {
+    public int getIsStudent() {
+		return isStudent;
+	}
+
+	public void setIsStudent(int isStudent) {
+		this.isStudent = isStudent;
+	}
+
+	public int getAnwserId() {
         return anwserId;
     }
 
@@ -53,11 +63,11 @@ public class AnswerPeople {
         this.score = score == null ? null : score.trim();
     }
 
-    public String getCorresponding() {
-        return corresponding;
+    public String getphoneNum() {
+        return phoneNum;
     }
 
-    public void setCorresponding(String corresponding) {
-        this.corresponding = corresponding == null ? null : corresponding.trim();
+    public void setphoneNum(String phoneNum) {
+        this.phoneNum = phoneNum == null ? null : phoneNum.trim();
     }
 }
