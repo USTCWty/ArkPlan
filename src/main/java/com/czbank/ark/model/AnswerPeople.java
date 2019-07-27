@@ -1,9 +1,9 @@
 package com.czbank.ark.model;
 
 public class AnswerPeople {
-    private Integer anwserId;
+    private Integer answerId;
 
-    private String answerName;
+    private String realName;
 
     private String affiliation;
 
@@ -23,20 +23,20 @@ public class AnswerPeople {
 		this.isStudent = isStudent;
 	}
 
-	public int getAnwserId() {
-        return anwserId;
+	public int getAnswerId() {
+        return answerId;
     }
 
-    public void setAnwserId(int anwserId) {
-        this.anwserId = anwserId ;
+    public void setAnswerId(int anwserId) {
+        this.answerId = anwserId ;
     }
 
-    public String getAnswerName() {
-        return answerName;
+    public String getRealName() {
+        return realName;
     }
 
-    public void setAnswerName(String answerName) {
-        this.answerName = answerName == null ? null : answerName.trim();
+    public void setRealName(String realName) {
+        this.realName = realName == null ? null : realName.trim();
     }
 
     public String getAffiliation() {
