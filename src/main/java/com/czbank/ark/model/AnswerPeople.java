@@ -4,8 +4,18 @@ public class AnswerPeople {
     private Integer answerId;
 
     private String realName;
+    
+    private String userName;
 
-    private String affiliation;
+    public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	private String affiliation;
 
     private String age;
 
