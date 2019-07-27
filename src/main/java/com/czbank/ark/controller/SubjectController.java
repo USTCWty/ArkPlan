@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.swing.text.TabStop;
 
+import org.omg.CORBA.INTERNAL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -81,5 +83,15 @@ public class SubjectController {
 		 subject.setAnswerNum(answerNum);
 		 subject.setScanNum(scanNum);
 		 subjectService.updateSubject(subject);
+	}
+	
+	@RequestMapping("/getSubjectRank")
+	public List<Subject>  getSubjectRank(HttpServletRequest request){
+		String topString =request.getParameter("top");
+		int top=1;
+	    if(topString!=null &&topString.length()>0){
+	    	top =Integer.parseInt(topString);
+	    }
+		return subjectService.getSubjectRank(top) ;
 	}
 }

@@ -12,6 +12,7 @@ public interface SubjectService {
 	int addSubject(Subject subject); //新增题目
 	int updateSubject(Subject subject); //更新题目
 	List<SubjectType> getSubjectType();// 获取题目类型
+	List<Subject> getSubjectRank(int top); //获取题目榜单
 	
 	
 	

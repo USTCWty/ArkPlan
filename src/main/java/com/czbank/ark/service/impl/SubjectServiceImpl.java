@@ -27,7 +27,7 @@ public class SubjectServiceImpl implements SubjectService {
 
 	public int updateSubject(Subject subject) {
 		// TODO Auto-generated method stub
-		return 0;
+		return subjectMapper.updateSubjectById(subject);
 	}
 
 	public List<Subject> getAllSubject() {		
@@ -42,6 +42,12 @@ public class SubjectServiceImpl implements SubjectService {
 			return typeList;
 		}
 		return null;
+	}
+
+	@Override
+	public List<Subject> getSubjectRank(int top) {
+		// TODO Auto-generated method stub
+		return subjectMapper.selectSubjectRank(top);
 	}
 
 }
