@@ -32,6 +32,6 @@ public interface SubjectMapper {
     @Select("select * from subjectType")
     List<SubjectType> selectSubjectType();
     
-    @Select("select subject_id,subject_name,subject_content,scan_num  from subject  order by answer_num limit #{top}")
+    @Select("select *  from subject  order by answer_num limit #{top}")
     List<Subject> selectSubjectRank(int top);
 }
