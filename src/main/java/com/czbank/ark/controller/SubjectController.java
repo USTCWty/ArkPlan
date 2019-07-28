@@ -1,5 +1,7 @@
 package com.czbank.ark.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -7,7 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.czbank.ark.model.Subject;
 import com.czbank.ark.model.SubjectType;
@@ -43,9 +48,6 @@ public class SubjectController {
 		 String subjectType=map.get("subjectType").toString();
 		 String startDate=map.get("startDate").toString();
 		 String endDate=map.get("endDate").toString();
-		 String scanNum=map.get("scanNum").toString();
-		 String answerNum =map.get("answerNum").toString();
-		 String answerId=map.get("answerId").toString();
 		 Subject subject =new Subject();
 		 subject.setCompanyId(companyId);
 		 subject.setSubjectName(subjectName);
@@ -89,4 +91,23 @@ public class SubjectController {
 	    }
 		return subjectService.getSubjectRank(top) ;
 	}
+	
+	   @ResponseBody
+	   @RequestMapping("/uploadFile")
+	    public String upload(@RequestParam("file") MultipartFile file) {
+	        if (file.isEmpty()) {
+	            return "上传失败，请选择文件";
+	        }
+
+	        String fileName = file.getOriginalFilename();
+	        String filePath = "D:/fileTest";
+	        File dest = new File(filePath + fileName);
+	        try {
+	            file.transferTo(dest);
+	            return "上传成功";
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	        return "上传失败！";
+	    }
 }
