@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 import org.springframework.stereotype.Repository;
 
@@ -21,8 +22,11 @@ public interface UserMapper {
     int countAllUser();
     
    // @Select("select * from user where user_name=#{username}")
-    List<User> selectUserByName(String name);
+   User selectUserByName(String name);
     
-    @Select("select * from user where user_id =#{id}")
-    User selectUserById(Integer id);
+    @Select("select * from user ")
+    List<User> selectUser();
+    
+    @Update("update user set user_name = #{username},user_password = #{userPassword},user_role = #{userRole},submit_time = #{submitTime}")
+    int updateUser(User user);
 }
