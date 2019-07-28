@@ -26,7 +26,7 @@ public interface SubjectMapper {
     @Insert("insert into subject (subject_content, scan_num, subject_type, company_name, answer_num,  start_date, end_date) VALUES (#{subjectContent}, #{scanNum}, #{subjectType}, #{companyName}, #{answerNum}, #{startDate},#{endDate})")
     int inserSubject(Subject subject);
     
-    @Update("update subject set subject_content = #{subjectContent},scan_num = #{scanNum},subject_type = #{subjectType},company_id = #{companyId},answer_num=#{answerNum},start_date=#{startDate},end_date=#{endDate} where id = #{id}") 
+    @Update("update subject set subject_content = #{subjectContent},scan_num = #{scanNum},subject_type = #{subjectType},company_name = #{companyName},answer_num=#{answerNum},start_date=#{startDate},end_date=#{endDate} where id = #{id}") 
     int updateSubjectById(Subject subject);
     
     @Select("select * from subjectType")

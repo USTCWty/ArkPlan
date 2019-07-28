@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -24,7 +25,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.czbank.ark.model.Company;
 import com.czbank.ark.model.User;
+import com.czbank.ark.service.CompanyService;
 import com.czbank.ark.service.UserService;
 import com.czbank.ark.util.ArkResponse;
 
@@ -32,6 +35,8 @@ import com.czbank.ark.util.ArkResponse;
 public class UserController {
 	@Autowired
 	UserService userService;
+	@Autowired
+	CompanyService companyService;
 
 	@RequestMapping("/test")
 	public String testSpring() {
@@ -80,6 +85,9 @@ public class UserController {
 		ArkResponse response = new ArkResponse();
 
 		if (num == 1) {
+			Company company =new Company();
+			company.setCompanyName(user.getUserName());
+			companyService.insertCompany(company);
 			response.setResponseCode(200);
 			response.setResponseMsg("成功");
 		} else {
@@ -93,6 +101,12 @@ public class UserController {
 	public List<User> userFind() {
 		return userService.getAllUser();
 
+	}
+	
+	@RequestMapping("/deleteUser")
+	public int deleteUserByName(HttpServletRequest request){
+		String userName =request.getParameter("userName");
+		return userService.deleteUser(userName);
 	}
 
 	@RequestMapping(value = "/export")

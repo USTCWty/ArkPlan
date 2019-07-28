@@ -13,4 +13,5 @@ public interface UserService {
 	public List<User> getAllUser();
 	public int addUser(User user);
 	public boolean batchImport(String fileName, MultipartFile file);
+	public int deleteUser(String userName);
 }

@@ -3,6 +3,7 @@ package com.czbank.ark.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -29,4 +30,7 @@ public interface UserMapper {
     
     @Update("update user set user_name = #{username},user_password = #{userPassword},user_role = #{userRole},submit_time = #{submitTime}")
     int updateUser(User user);
+    
+    @Delete("delete user where user_name=#{username}")
+    int deleteUser(String userName);
 }

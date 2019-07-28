@@ -126,4 +126,10 @@ public class UserServiceImpl implements UserService {
 		 	}      
 		 	return notNull;   
 	}
+
+	@Override
+	public int deleteUser(String userName) {
+		// TODO Auto-generated method stub
+		return userMapper.deleteUser(userName);
+	}
 }

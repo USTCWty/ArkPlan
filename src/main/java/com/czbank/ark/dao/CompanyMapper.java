@@ -28,6 +28,6 @@ public interface CompanyMapper {
     @Update("update company set company_number = #{companyNumber},idcard= #{idcard},company_url = #{companyUrl},legal_person = #{legalPerson}")
     int updateCompany(Company company);
     
-    @Insert("insert into company (company_name) VALUES (#{company})")
+    @Insert("insert into company (company_name) VALUES (#{companyName})")
     int insertCompany(Company company);
 }
