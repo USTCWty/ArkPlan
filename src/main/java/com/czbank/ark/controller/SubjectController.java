@@ -116,7 +116,7 @@ public class SubjectController {
 		}
 
 		String fileName = file.getOriginalFilename();
-		String filePath = "D:/fileTest";
+		String filePath = "D:/fileTest/";
 		File dest = new File(filePath + fileName);
 		try {
 			file.transferTo(dest);
