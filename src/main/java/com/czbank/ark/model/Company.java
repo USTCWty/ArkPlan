@@ -11,9 +11,17 @@ public class Company {
 
     private String companyUrl;
 
-    private String idname;
+    private String legalPerson;
 
-    public int getCompanyId() {
+    public String getLegalPerson() {
+		return legalPerson;
+	}
+
+	public void setLegalPerson(String legalPerson) {
+		this.legalPerson = legalPerson;
+	}
+
+	public int getCompanyId() {
         return companyId;
     }
 
@@ -53,11 +61,5 @@ public class Company {
         this.companyUrl = companyUrl == null ? null : companyUrl.trim();
     }
 
-    public String getIdname() {
-        return idname;
-    }
-
-    public void setIdname(String idname) {
-        this.idname = idname == null ? null : idname.trim();
-    }
+    
 }

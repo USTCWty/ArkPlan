@@ -1,27 +1,31 @@
 package com.czbank.ark.model;
 
 public class AnswerSubject {
-    private Integer answerId;
+    public String getAnswerName() {
+		return answerName;
+	}
 
-    private String subjectId;
+	public void setAnswerName(String answerName) {
+		this.answerName = answerName;
+	}
+
+	public int getSubjectId() {
+		return subjectId;
+	}
+
+	public void setSubjectId(int subjectId) {
+		this.subjectId = subjectId;
+	}
+
+	private String answerName;
+
+    private int subjectId;
 
     private String answerContent;
 
-    public int getAnswerId() {
-        return answerId;
-    }
 
-    public void setAnswerId(int answerId) {
-        this.answerId = answerId ;
-    }
 
-    public String getSubjectId() {
-        return subjectId;
-    }
 
-    public void setSubjectId(String subjectId) {
-        this.subjectId = subjectId == null ? null : subjectId.trim();
-    }
 
     public String getAnswerContent() {
         return answerContent;

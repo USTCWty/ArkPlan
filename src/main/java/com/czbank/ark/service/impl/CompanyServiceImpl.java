@@ -14,5 +14,15 @@ public class CompanyServiceImpl implements CompanyService {
 		
 		return companyMapper.selectBycompanyName(companyName);
 	}
+	@Override
+	public int insertCompany(Company company) {
+		// TODO Auto-generated method stub
+		return companyMapper.insertCompany(company);
+	}
+	@Override
+	public int updateCompany(Company company) {
+		// TODO Auto-generated method stub
+		return companyMapper.updateCompany(company);
+	}
 
 }

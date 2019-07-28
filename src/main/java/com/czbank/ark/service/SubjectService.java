@@ -13,8 +13,8 @@ public interface SubjectService {
 	int updateSubject(Subject subject); //更新题目
 	List<SubjectType> getSubjectType();// 获取题目类型
 	List<Subject> getSubjectRank(int top); //获取题目榜单
-	
-	
+	List<Subject> getSubjectByCompany(String companyName);//获取企业题目
+	List<Subject> getSubjectByAnswer(String answerName);//获取个人题目
 	
 	
 	

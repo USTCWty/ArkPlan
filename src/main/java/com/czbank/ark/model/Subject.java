@@ -19,9 +19,17 @@ public class Subject {
 
     private String subjectType;
 
-    private int companyId;
+    private String companyName;
 
-    private int answerNum;
+    public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	private int answerNum;
 
     private String startDate;
 
@@ -57,14 +65,6 @@ public class Subject {
 
     public void setSubjectType(String subjectType) {
         this.subjectType= subjectType == null ? null : subjectType.trim();
-    }
-
-    public int getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(int companyId) {
-        this.companyId = companyId ;
     }
 
     public int getAnswerNum() {

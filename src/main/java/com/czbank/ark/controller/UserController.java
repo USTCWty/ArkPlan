@@ -1,5 +1,7 @@
 package com.czbank.ark.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
@@ -95,28 +97,18 @@ public class UserController {
 
 	@RequestMapping(value = "/export")
 	@ResponseBody
-	public void export(HttpServletResponse response) throws IOException {
+	public void export(HttpServletResponse response) throws IOException {		
 		List<User> users = userService.getAllUser();
 		HSSFWorkbook wb = new HSSFWorkbook();
-		HSSFSheet sheet = wb.createSheet("获取excel测试表格");
+		HSSFSheet sheet = wb.createSheet("sheet1");
 		HSSFRow row = null;
 		row = sheet.createRow(0);// 创建第一个单元格
 		row.setHeight((short) (26.25 * 20));
 		row.createCell(0).setCellValue("用户信息列表");// 为第一行单元格设值
-		/*
-		 * 为标题设计空间 * firstRow从第1行开始 * lastRow从第0行结束 * *从第1个单元格开始 * 从第3个单元格结束
-		 */
+
 		CellRangeAddress rowRegion = new CellRangeAddress(0, 0, 0, 2);
 		sheet.addMergedRegion(rowRegion);
-		/*
-		 * CellRangeAddress columnRegion = new CellRangeAddress(1,4,0,0);
-		 * sheet.addMergedRegion(columnRegion);
-		 */
-		/*
-		 * 动态获取数据库列 sql语句 select COLUMN_NAME from INFORMATION_SCHEMA.Columns
-		 * where table_name='user' and table_schema='test' * 第一个table_name 表名字 *
-		 * 第二个table_name 数据库名称 *
-		 */
+
 		row = sheet.createRow(1);
 		row.setHeight((short) (22.50 * 20));// 设置行高
 		row.createCell(0).setCellValue("用户名");// 为第一个单元格设值
@@ -135,7 +127,10 @@ public class UserController {
 		}
 		response.setContentType("application/vnd.ms-excel;charset=utf-8");
 		OutputStream os = response.getOutputStream();
-		response.setHeader("Content-disposition", "attachment;filename=user.xls");// 默认Excel名称
+		Date date =new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time = dateFormat.format(date).toString();
+		response.setHeader("Content-disposition", "attachment;filename="+time+"user.xls");// 默认Excel名称
 		wb.write(os);
 		os.flush();
 		os.close();
