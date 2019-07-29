@@ -10,11 +10,9 @@ import com.czbank.ark.model.AnswerSubject;
 @Repository
 public interface AnswerSubjectMapper {
    
-    @Insert("insert into answer_subject (answer_name,subject_id) VALUES (#{answerName},#{subjectId})"
-    		+ ")")
+    @Insert("insert into answer_subject (answer_name,subject_id) VALUES (#{answerName},#{subjectId})")
     int insertAnswerSubject(AnswerSubject answerSubject);
     
-    @Update("update answer_subject set answer_content=#{answerContent})"
-    		+ ")")
+    @Update("update answer_subject set answer_content=#{answerContent})")
     int updateAnswerSubject(AnswerSubject answerSubject);
 }
