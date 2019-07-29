@@ -119,9 +119,6 @@ public class SubjectController {
 
 		String fileName = file.getOriginalFilename();
 		String filePath = "D:/fileTest/";
-		Date date =new Date();
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String time = dateFormat.format(date).toString();
 		File dest = new File(filePath + fileName);
 		try {
 			file.transferTo(dest);
@@ -132,3 +129,4 @@ public class SubjectController {
 		return "上传失败！";
 	}
 }
+
