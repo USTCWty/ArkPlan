@@ -2,6 +2,8 @@ package com.czbank.ark.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -116,7 +118,10 @@ public class SubjectController {
 		}
 
 		String fileName = file.getOriginalFilename();
-		String filePath = "D:/fileTest";
+		String filePath = "D:/fileTest/";
+		Date date =new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time = dateFormat.format(date).toString();
 		File dest = new File(filePath + fileName);
 		try {
 			file.transferTo(dest);

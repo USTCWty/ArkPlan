@@ -9,11 +9,8 @@ import com.czbank.ark.model.AnswerSubject;
 @Mapper
 @Repository
 public interface AnswerSubjectMapper {
-    int insert(AnswerSubject record);
-
-    int insertSelective(AnswerSubject record);
-    
-    @Insert("insert into answer_subject (answer_name,subject_id) values(#{answerName,subjectId})"
+   
+    @Insert("insert into answer_subject (answer_name,subject_id) VALUES (#{answerName},#{subjectId})"
     		+ ")")
     int insertAnswerSubject(AnswerSubject answerSubject);
     
