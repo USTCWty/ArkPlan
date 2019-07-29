@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
 	 @Override   
 	 public boolean batchImport(String fileName, MultipartFile file) {      
 		 boolean notNull = false;      
-		 List<User> userList = new ArrayList<>();      
+		 List<User> userList = new ArrayList<User>();     
 		 boolean isExcel2003 = true;      
 		 if (fileName.matches("^.+\\.(?i)(xlsx)$")) {         
 			 isExcel2003 = false;      
