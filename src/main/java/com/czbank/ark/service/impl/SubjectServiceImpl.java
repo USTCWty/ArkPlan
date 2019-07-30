@@ -59,7 +59,7 @@ public class SubjectServiceImpl implements SubjectService {
 	@Override
 	public List<Subject> getSubjectByAnswer(String answerName) {
 		// TODO Auto-generated method stub
-		return null;
+		return subjectMapper .selectSubjectByAnswerName(answerName);
 	}
 
 }

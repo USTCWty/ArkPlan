@@ -31,6 +31,6 @@ public interface UserMapper {
     @Update("update user set user_name = #{username},user_password = #{userPassword},user_role = #{userRole},submit_time = #{submitTime}")
     int updateUser(User user);
     
-    @Delete("delete user where user_name=#{username}")
+    @Delete("delete from user where user_name=#{username}")
     int deleteUser(String userName);
 }

@@ -52,6 +52,7 @@ public class SubjectController {
 		String subjectType = map.get("subjectType").toString();
 		String startDate = map.get("startDate").toString();
 		String endDate = map.get("endDate").toString();
+		int bonus =Integer.parseInt(map.get("bonus").toString());
 		Subject subject = new Subject();
 		subject.setCompanyName(companyName);
 		subject.setSubjectName(subjectName);
@@ -59,6 +60,7 @@ public class SubjectController {
 		subject.setStartDate(startDate);
 		subject.setEndDate(endDate);
 		subject.setSubjectType(subjectType);
+		subject.setBonus(bonus);
 
 		subjectService.addSubject(subject);
 	}

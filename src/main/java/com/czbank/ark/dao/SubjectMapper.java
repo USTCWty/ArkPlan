@@ -23,7 +23,7 @@ public interface SubjectMapper {
     @Select("select * from subject")
     List<Subject> selectAllSubject();
     
-    @Insert("insert into subject (subject_content, scan_num, subject_type, company_name, answer_num,  start_date, end_date) VALUES (#{subjectContent}, #{scanNum}, #{subjectType}, #{companyName}, #{answerNum}, #{startDate},#{endDate})")
+    @Insert("insert into subject (bonus,subject_name,subject_content, scan_num, subject_type, company_name, answer_num,  start_date, end_date) VALUES (#{bonus},#{subjectName},#{subjectContent}, #{scanNum}, #{subjectType}, #{companyName}, #{answerNum}, #{startDate},#{endDate})")
     int inserSubject(Subject subject);
     
     @Update("update subject set subject_content = #{subjectContent},scan_num = #{scanNum},subject_type = #{subjectType},company_name = #{companyName},answer_num=#{answerNum},start_date=#{startDate},end_date=#{endDate} where id = #{id}") 
@@ -37,4 +37,7 @@ public interface SubjectMapper {
     //根据企业名搜题目
     @Select("select * from subject where company_name =#{companyName}")
     List<Subject> selectSubjectByCompanyName(String companyName);
+    
+    @Select("select * from subject where subject_id in(SELECT subject_id from answer_subject where answer_name=#{answerName})")
+    List<Subject> selectSubjectByAnswerName(String AnswerName);
 }

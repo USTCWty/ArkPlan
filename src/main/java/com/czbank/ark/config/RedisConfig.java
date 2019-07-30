@@ -1,4 +1,4 @@
-package com.czbank.ark.config;
+/*package com.czbank.ark.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
@@ -60,3 +60,4 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
 }
+*/

@@ -4,8 +4,18 @@ public class Subject {
     private int subjectId;
     
     private String subjectName;
+    
+    private int bonus;
 
-    public String getSubjectName() {
+    public int getBonus() {
+		return bonus;
+	}
+
+	public void setBonus(int bonus) {
+		this.bonus = bonus;
+	}
+
+	public String getSubjectName() {
 		return subjectName;
 	}
 
